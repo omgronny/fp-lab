@@ -33,6 +33,7 @@ library
       LargestProductFoldAndMap
       LargestProductRec
       LargestProductTailRec
+      Grid
   other-modules:
       Paths_fp_lab
   hs-source-dirs:

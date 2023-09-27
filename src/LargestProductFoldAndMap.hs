@@ -1,6 +1,7 @@
 module LargestProductFoldAndMap(doMain) where
 
 import Data.List (transpose)
+import Grid
 
 parse :: String -> [[Int]]
 parse = map (map read . words) . lines
@@ -41,11 +42,9 @@ getProducts grid = map product grid
 
 -----------------------------------------------------------------------------------------
 
-doMain :: IO ()
-doMain = do
-    str <- readFile "grid"
-    let grid = parse str
-    print $ maximum . getProducts $
+doMain :: Int
+doMain = let grid = Grid.getGrid in
+    maximum . getProducts $
         horizontalRows grid ++
         verticalRows grid ++
         createDiagonalListFrom grid ++
