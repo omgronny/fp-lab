@@ -3,11 +3,11 @@ module FactorialDigitSumTailRec(doMain) where
 import Data.Char
 
 factorial :: Integer -> Integer
-factorial n = tailFactorial 1 n
+factorial = tailFactorial 1
     where
-        tailFactorial acc n
-            | n == 0    = acc
-            | otherwise = tailFactorial (acc * n) (n - 1)  
+        tailFactorial acc n'
+            | n' == 0    = acc
+            | otherwise = tailFactorial (acc * n') (n' - 1)
 
 digitSum :: Integer -> Int
 digitSum n = iterateThrough 0 (show n)
