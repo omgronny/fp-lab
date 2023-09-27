@@ -31,7 +31,7 @@ test4 :: Test
 test4 = TestCase (assertEqual "Test assert FoldAndMap" FactorialDigitSumFoldAndMap.doMain 648)
 
 test5 :: Test
-test5 = TestCase (assertEqual "Test assert Rec" FactorialDigitSumInfinite.doMain 648)
+test5 = TestCase (assertEqual "Test assert Rec" FactorialDigitSumInfitine.doMain 648)
 
 test6 :: Test
 test6 = TestCase (assertEqual "Test assert TailRec" FactorialDigitSumRec.doMain 648)
