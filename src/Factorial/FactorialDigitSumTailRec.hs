@@ -1,4 +1,4 @@
-module Factorial.FactorialDigitSumTailRec(doMain) where
+module FactorialDigitSumTailRec(doMain) where
 
 import Data.Char
 
