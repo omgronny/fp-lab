@@ -1,4 +1,4 @@
-module FactorialDigitSumInfitine(doMain) where
+module Factorial.FactorialDigitSumInfitine(doMain) where
 import Data.Char
 
 factorial :: Int -> Integer

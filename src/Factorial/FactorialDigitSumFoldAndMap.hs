@@ -1,4 +1,4 @@
-module FactorialDigitSumTailRec(doMain) where
+module Factorial.FactorialDigitSumFoldAndMap(doMain) where
 
 import Data.Char
 
@@ -10,11 +10,10 @@ factorial = tailFactorial 1
             | otherwise = tailFactorial (acc * n') (n' - 1)
 
 digitSum :: Integer -> Int
-digitSum n = iterateThrough 0 (show n)
+digitSum n = iterateThrough (show n)
     where
-        iterateThrough :: Int -> String -> Int
-        iterateThrough acc [] = acc
-        iterateThrough acc (s:str) = iterateThrough (acc + ord s - 48) str
+        stringToNumbers = map (\x -> ord x - 48)
+        iterateThrough str = foldr (+) 0 (stringToNumbers str)
 
 factorialDigitSum :: Integer -> Int
 factorialDigitSum n = digitSum (factorial n)
