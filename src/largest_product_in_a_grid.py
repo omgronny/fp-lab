@@ -44,5 +44,3 @@ for i in range(len(reversed_grid) - 3):
         products.append(product([reversed_grid[i + k][j + k] for k in range(4)]))
 
 print(max(products))
-
-

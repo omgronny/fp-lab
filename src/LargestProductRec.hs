@@ -4,9 +4,6 @@ module LargestProductRec(doMain) where
 import Data.List (transpose)
 import Grid
 
-parse :: String -> [[Int]]
-parse = map (map read . words) . lines
-
 -----------------------------------------------------------------------------------------
 
 productRow :: [Int] -> [Int]

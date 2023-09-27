@@ -13,9 +13,8 @@ digitSum :: Integer -> Int
 digitSum n = iterateThrough 0 (show n)
     where
         iterateThrough :: Int -> String -> Int
-        iterateThrough acc str
-            | null str  = acc
-            | otherwise = iterateThrough (acc + ord (head str) - 48) (tail str)
+        iterateThrough acc [] = acc
+        iterateThrough acc (s:str) = iterateThrough (acc + ord s - 48) str
 
 factorialDigitSum :: Integer -> Int
 factorialDigitSum n = digitSum (factorial n)

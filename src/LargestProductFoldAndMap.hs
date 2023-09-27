@@ -3,9 +3,6 @@ module LargestProductFoldAndMap(doMain) where
 import Data.List (transpose)
 import Grid
 
-parse :: String -> [[Int]]
-parse = map (map read . words) . lines
-
 -----------------------------------------------------------------------------------------
 
 getRows :: [a] -> [[a]]
