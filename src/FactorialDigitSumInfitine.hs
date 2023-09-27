@@ -1,5 +1,4 @@
 module FactorialDigitSumInfitine(doMain) where
-
 import Data.Char
 
 factorial :: Int -> Integer

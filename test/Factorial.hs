@@ -5,7 +5,7 @@ import LargestProductRec(doMain)
 import LargestProductTailRec(doMain)
 
 import FactorialDigitSumFoldAndMap(doMain)
-import FactorialDigitSumInfinite(doMain)
+import FactorialDigitSumInfitine(doMain)
 import FactorialDigitSumRec(doMain)
 import FactorialDigitSumTailRec(doMain)
 
