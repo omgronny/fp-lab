@@ -1,4 +1,7 @@
+module FactorialDigitSumInfitine(doMain) where
+
 import Data.Char
+
 factorial :: Int -> Integer
 factorial n = product (take n [1..])
 
@@ -11,4 +14,4 @@ digitSum n = iterateThrough (show n)
 factorialDigitSum :: Int -> Int
 factorialDigitSum n = digitSum (factorial n)
 
-main = print $ factorialDigitSum 100
+doMain = print $ factorialDigitSum 100

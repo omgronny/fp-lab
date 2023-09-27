@@ -1,6 +1,6 @@
+module FactorialDigitSumFoldAndMap(doMain) where
+
 import Data.Char
-import Data.List
-import Data.Foldable
 
 factorial :: Integer -> Integer
 factorial n = tailFactorial 1 n
@@ -18,4 +18,4 @@ digitSum n = iterateThrough (show n)
 factorialDigitSum :: Integer -> Int
 factorialDigitSum n = digitSum (factorial n)
 
-main = print $ factorialDigitSum 100
+doMain = print $ factorialDigitSum 100

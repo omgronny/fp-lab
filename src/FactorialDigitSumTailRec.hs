@@ -1,4 +1,7 @@
+module FactorialDigitSumTailRec(doMain) where
+
 import Data.Char
+
 factorial :: Integer -> Integer
 factorial n = tailFactorial 1 n
     where
@@ -17,4 +20,4 @@ digitSum n = iterateThrough 0 (show n)
 factorialDigitSum :: Integer -> Int
 factorialDigitSum n = digitSum (factorial n)
 
-main = print $ factorialDigitSum 100
+doMain = print $ factorialDigitSum 100

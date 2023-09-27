@@ -1,5 +1,6 @@
+module LargestProductRec(doMain) where
+
 import Data.List (transpose)
-import Data.Array (Ix(index))
 
 parse :: String -> [[Int]]
 parse = map (map read . words) . lines
@@ -45,8 +46,8 @@ diagonalProducts grid
 
 -----------------------------------------------------------------------------------------
 
-main :: IO ()
-main = do
+doMain :: IO ()
+doMain = do
         str <- readFile "grid"
         let grid = parse str
         print $ maximum $ horizontalProducts grid ++ verticalProducts grid ++ diagonalProducts grid ++ diagonalProducts (map reverse grid)
