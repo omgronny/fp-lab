@@ -20,4 +20,5 @@ digitSum n = iterateThrough 0 (show n)
 factorialDigitSum :: Integer -> Int
 factorialDigitSum n = digitSum (factorial n)
 
+doMain :: IO ()
 doMain = print $ factorialDigitSum 100

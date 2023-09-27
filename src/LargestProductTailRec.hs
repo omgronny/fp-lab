@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wno-name-shadowing #-}
 module LargestProductTailRec(doMain) where
 
 import Data.List (transpose)

@@ -1,6 +1,6 @@
 module LargestProductFoldAndMap(doMain) where
 
-import Data.List (tails, transpose)
+import Data.List (transpose)
 
 parse :: String -> [[Int]]
 parse = map (map read . words) . lines
