@@ -1,4 +1,4 @@
-module Factorial.FactorialDigitSumFoldAndMap(doMain) where
+module FactorialDigitSumFoldAndMap(doMain) where
 
 import Data.Char
 
