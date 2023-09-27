@@ -37,6 +37,7 @@ library
   other-modules:
       Paths_fp_lab
   hs-source-dirs:
+      src
       src/Factorial
       src/Product
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
