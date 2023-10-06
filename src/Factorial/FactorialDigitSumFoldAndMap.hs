@@ -13,7 +13,7 @@ digitSum :: Integer -> Int
 digitSum n = iterateThrough (show n)
     where
         stringToNumbers = map (\x -> ord x - 48)
-        iterateThrough str = foldr (+) 0 (stringToNumbers str)
+        iterateThrough str = sum (stringToNumbers str)
 
 factorialDigitSum :: Integer -> Int
 factorialDigitSum n = digitSum (factorial n)
