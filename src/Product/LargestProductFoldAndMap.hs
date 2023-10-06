@@ -11,29 +11,29 @@ getRows row = take 4 row : getRows (tail row)
 
 -----------------------------------------------------------------------------------------
 
-horizontalRows :: [[Int]] -> [[Int]]
+horizontalRows :: [[a]] -> [[a]]
 horizontalRows = concatMap getRows
 
 -----------------------------------------------------------------------------------------
 
-verticalRows :: [[Int]] -> [[Int]]
+verticalRows :: [[a]] -> [[a]]
 verticalRows grid = horizontalRows (transpose grid)
 
 -----------------------------------------------------------------------------------------
 
-doCreateDiagonalListFrom :: [[Int]] -> [[Int]]
+doCreateDiagonalListFrom :: Num a => [[a]] -> [[a]]
 doCreateDiagonalListFrom = verticalRows . shiftRows
     where
-        shiftRows :: [[Int]] -> [[Int]]
+        shiftRows :: Num a => [[a]] -> [[a]]
         shiftRows = zipWith drop [0..]
 
-createDiagonalListFrom :: [[Int]] -> [[Int]]
+createDiagonalListFrom :: Num a => [[a]] -> [[a]]
 createDiagonalListFrom [] = []
 createDiagonalListFrom grid = doCreateDiagonalListFrom grid ++ createDiagonalListFrom (tail grid)
 
 -----------------------------------------------------------------------------------------
 
-getProducts :: [[Int]] -> [Int]
+getProducts :: Num a => [[a]] -> [a]
 getProducts [] = []
 getProducts grid = map product grid
 
