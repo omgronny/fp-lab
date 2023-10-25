@@ -29,16 +29,14 @@ doCreateDiagonalListFrom = verticalRows . shiftRows
         shiftRows = zipWith drop [0..]
 
 createDiagonalListFrom :: Num a => [[a]] -> [[a]]
-createDiagonalListFrom grid
-    | null grid = []
-    | otherwise = doCreateDiagonalListFrom grid ++ createDiagonalListFrom (tail grid)
+createDiagonalListFrom [] = []
+createDiagonalListFrom grid = doCreateDiagonalListFrom grid ++ createDiagonalListFrom (tail grid)
 
 -----------------------------------------------------------------------------------------
 
 getProducts :: Num a => [[a]] -> [a]
-getProducts grid
-    | null grid = []
-    | otherwise = map product grid
+getProducts [] = []
+getProducts grid = map product grid
 
 -----------------------------------------------------------------------------------------
 

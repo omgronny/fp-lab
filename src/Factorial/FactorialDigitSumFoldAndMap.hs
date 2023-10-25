@@ -5,9 +5,9 @@ import Data.Char
 factorial :: Integer -> Integer
 factorial = tailFactorial 1
     where
-        tailFactorial acc n'
-            | n' == 0    = acc
-            | otherwise = tailFactorial (acc * n') (n' - 1)
+        tailFactorial :: Integer -> Int -> Integer
+        tailFactorial acc 0 = acc
+        tailFactorial acc n' = tailFactorial (acc * n') (n' - 1)
 
 digitSum :: Integer -> Int
 digitSum n = iterateThrough (show n)

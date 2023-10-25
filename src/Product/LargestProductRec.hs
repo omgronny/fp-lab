@@ -7,14 +7,12 @@ import Grid
 -----------------------------------------------------------------------------------------
 
 productRow :: [Int] -> [Int]
-productRow row
-  | null row = []
-  | otherwise = product (take 4 row) : productRow (tail row)
+productRow [] = []
+productRow row = product (take 4 row) : productRow (tail row)
 
 horizontalProducts :: [[Int]] -> [Int]
-horizontalProducts grid
-  | null grid = []
-  | otherwise = productRow (head grid) ++ horizontalProducts (tail grid)
+horizontalProducts grid [] = []
+horizontalProducts grid = productRow (head grid) ++ horizontalProducts (tail grid)
 
 -----------------------------------------------------------------------------------------
 
@@ -27,8 +25,8 @@ createDiagonalListFrom :: [[Int]] -> Int -> [Int]
 createDiagonalListFrom grid startsFrom = doCreateDiagonalListFrom grid startsFrom 0
   where
     doCreateDiagonalListFrom :: [[Int]] -> Int -> Int -> [Int]
+    doCreateDiagonalListFrom [] _ _ = []
     doCreateDiagonalListFrom grid startsFrom currentIndex
-      | null grid = []
       | currentIndex >= 4 = []
       | null (drop (currentIndex + startsFrom) (head grid)) = []
       | otherwise = head grid!!(startsFrom + currentIndex) : doCreateDiagonalListFrom (tail grid) startsFrom (currentIndex + 1)
@@ -39,9 +37,8 @@ productDiagonalRow grid startsFrom
   | otherwise = product (createDiagonalListFrom grid startsFrom) : productDiagonalRow grid (startsFrom + 1)
 
 diagonalProducts :: [[Int]] -> [Int]
-diagonalProducts grid
-  | null grid = []
-  | otherwise = productDiagonalRow grid 0 ++ diagonalProducts (tail grid)
+diagonalProducts [] = []
+diagonalProducts grid = productDiagonalRow grid 0 ++ diagonalProducts (tail grid)
 
 -----------------------------------------------------------------------------------------
 
