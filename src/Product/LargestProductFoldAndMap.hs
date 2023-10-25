@@ -6,8 +6,9 @@ import Grid
 -----------------------------------------------------------------------------------------
 
 getRows :: [a] -> [[a]]
-getRows [] = []
-getRows row = take 4 row : getRows (tail row)
+getRows row
+    | null row  = []
+    | otherwise = take 4 row : getRows (tail row)
 
 -----------------------------------------------------------------------------------------
 
@@ -28,14 +29,16 @@ doCreateDiagonalListFrom = verticalRows . shiftRows
         shiftRows = zipWith drop [0..]
 
 createDiagonalListFrom :: Num a => [[a]] -> [[a]]
-createDiagonalListFrom [] = []
-createDiagonalListFrom grid = doCreateDiagonalListFrom grid ++ createDiagonalListFrom (tail grid)
+createDiagonalListFrom grid
+    | null grid = []
+    | otherwise = doCreateDiagonalListFrom grid ++ createDiagonalListFrom (tail grid)
 
 -----------------------------------------------------------------------------------------
 
 getProducts :: Num a => [[a]] -> [a]
-getProducts [] = []
-getProducts grid = map product grid
+getProducts grid
+    | null grid = []
+    | otherwise = map product grid
 
 -----------------------------------------------------------------------------------------
 
